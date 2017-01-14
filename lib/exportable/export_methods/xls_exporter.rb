@@ -2,9 +2,8 @@ module Exportable
   module ExportMethods
     # Module to handle only XLS exporting
     module XlsExporter
-      require 'spreadsheet'
-
       include Exportable::Utils
+      Exportable.formats << :xls
 
       def export_xls(options = {})
         export_options = get_export_options(self, @options.merge(options))
@@ -13,6 +12,8 @@ module Exportable
 
       # Exporter class for XLS Exporter
       class Exporter
+        require 'spreadsheet'
+
         def initialize(model)
           @book = Spreadsheet::Workbook.new
           @model = model

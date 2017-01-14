@@ -2,9 +2,9 @@ module Exportable
   module ExportMethods
     # Module to handle only CSV exporting
     module CsvExporter
-      require 'csv'
-
       include Exportable::Utils
+
+      Exportable.formats << :csv
 
       def export_csv(options = {})
         export_options = get_export_options(self, @options.merge(options))
@@ -13,6 +13,8 @@ module Exportable
 
       # Exporter class for CSV Exporter
       class Exporter
+        require 'csv'
+
         def initialize(model)
           @model = model
         end

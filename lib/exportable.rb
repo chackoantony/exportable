@@ -1,6 +1,8 @@
 # Core module for the Gem
 module Exportable
   extend ActiveSupport::Autoload
+  mattr_accessor :formats
+  self.formats = []
 
   autoload :ClassMethods
   autoload :ExportMethods
