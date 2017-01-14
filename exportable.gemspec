@@ -5,7 +5,7 @@ require "exportable/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.name        = 'exportabe'
+  s.name        = 'exportable'
   s.version     = Exportable::VERSION
   s.authors     = ['Sunil Antony']
   s.email       = ['chackoantonydaniel@gmail.com']
