@@ -5,13 +5,13 @@ require "exportable/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.name        = "exportabe"
+  s.name        = 'exportabe'
   s.version     = Exportable::VERSION
-  s.authors     = ["Sunil Antony"]
-  s.email       = ["sunil.antony.india@gmail.com"]
-  s.homepage    = "https://github.com/sunil-antony/exportable"
-  s.summary     = "Export ActiveRecord model to different output formats incuding CSV, XLS etc"
-  s.description = "Description of exportable"
+  s.authors     = ['Sunil Antony']
+  s.email       = ['chackoantonydaniel@gmail.com']
+  s.homepage    = 'https://github.com/chackoantony/exportable'
+  s.summary     = "Exporting Rails ActiveRecord models."
+  s.description = 'Exportable will help you in exporting ActiveRecord models in to different output formats including CSV, XLS etc.'
   s.license     = "MIT"
   s.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   s.bindir        = "exe"
@@ -23,7 +23,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'rails', ['>= 4.0']
   s.add_development_dependency 'sqlite3'
   s.add_development_dependency 'rspec-rails'
-  s.add_development_dependency "factory_girl_rails"
   s.add_development_dependency 'database_cleaner'
-
 end
