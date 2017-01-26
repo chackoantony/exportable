@@ -3,7 +3,7 @@ require "spec_helper"
 describe 'Export CSV' do
 
   before(:each) do
-    ExportableModel.create!(field_string: "sample string", field_text: "sample text", field_date: Date.today )
+    create(:exportable_model)
   end
 
   it "responds to export_csv" do

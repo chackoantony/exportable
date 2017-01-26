@@ -11,6 +11,7 @@ module Exportable
   autoload_under 'export_methods' do
     autoload :CsvExporter
     autoload :XlsExporter
+    autoload :XmlExporter
   end
 
   def self.included(base)

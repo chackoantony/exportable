@@ -21,23 +21,7 @@ ENV["RAILS_ENV"] = "test"
 require File.expand_path("../dummy/config/environment.rb",  __FILE__)
 Dir[File.dirname(__FILE__) + '/support/**/*.rb'].each {|f| require f}
 require 'database_cleaner'
-
-
-RSpec.configure do |config|
-
-  config.before(:suite) do
-    DatabaseCleaner.strategy = :transaction
-    DatabaseCleaner.clean_with(:truncation)
-  end
-
-  config.around(:each) do |example|
-    DatabaseCleaner.cleaning do
-      example.run
-    end
-  end
-
-end
-
+require 'factory_girl_rails'
 
 
 RSpec.configure do |config|
@@ -125,4 +109,17 @@ RSpec.configure do |config|
   Kernel.srand config.seed
 =end
   config.include Helper::XlsHelper 
+  config.include FactoryGirl::Syntax::Methods
+  
+  config.before(:suite) do
+    DatabaseCleaner.strategy = :transaction
+    DatabaseCleaner.clean_with(:truncation)
+  end
+
+  config.around(:each) do |example|
+    DatabaseCleaner.cleaning do
+      example.run
+    end
+  end
+  
 end

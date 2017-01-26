@@ -4,7 +4,7 @@ require "spec_helper"
 describe Exportable::ExportMethods, type: :model do
   
   before(:each) do
-    ExportableModel.create!(field_string: "sample string", field_text: "sample text", field_date: Date.today )
+    create(:exportable_model)
     ExportableModel.class_eval{ exportable }
   end
   
@@ -24,7 +24,7 @@ describe Exportable::ExportMethods, type: :model do
     end
 
     it 'raise error on invalid output format' do
-      expect{ExportableModel.export(:xml)}.to raise_error(ArgumentError) 
+      expect{ExportableModel.export(:tsv)}.to raise_error(ArgumentError) 
     end
   end   
 

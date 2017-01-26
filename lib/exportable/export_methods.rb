@@ -3,6 +3,7 @@ module Exportable
   module ExportMethods
     include CsvExporter
     include XlsExporter
+    include XmlExporter
 
     def export(format, options = {})
       unless Exportable.formats.include?(format.to_sym)
