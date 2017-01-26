@@ -1,5 +1,5 @@
 # Exportable
-Exportable will help you in exporting Rails ActiveRecord models in to different output formats including CSV, XLS etc with just a one liner hook in your model. This Gem is tested against Rails 4 and 5 versions. Support for more output formats will be coming soon.
+Exportable will help you in exporting Rails ActiveRecord models in to different output formats including CSV, XLS, XML etc with just a one liner hook in your model. This Gem is tested against Rails 4 and 5 versions. Support for more output formats will be coming soon.
 
 ## Installation
 Add this line to your application's Gemfile:
@@ -28,11 +28,11 @@ class Article < ApplicationRecord
 end
 ```
 
-You can then use export methods on the model with supporting formats (:csv, :xls) and field options. 
+You can then use export methods on the model with supporting formats (:csv, :xls, :xml) and field options. 
 
 ```ruby
 Article.export(:csv)
-Article.export(:csv, only: [:title, :user_id])
+Article.export(:xml, only: [:title, :user_id])
 ```
 You can also call export methods on model scopes or ActiveRecord::Relation Object.
 ```ruby
@@ -72,7 +72,7 @@ Article.export_csv only: [:title, :published_on, :status]
 Omit exportable fields with 'except' option
 
 ```ruby
-Article.export_csv except: [:status]
+Article.export_xml except: [:status]
 ```
 
 ###:header
