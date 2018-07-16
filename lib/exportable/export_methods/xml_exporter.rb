@@ -22,7 +22,7 @@ module Exportable
           Nokogiri::XML::Builder.new(encoding: 'UTF-8') do |xml|
             xml.root do
               xml.send(@model.model_name.collection) do
-                @model.all.find_each do |record|
+                @model.all.each do |record|
                   xml.send(@model.model_name.element) do
                     options[:fields].each do |attr| 
                       xml.send(attr, record.send(attr).to_s)

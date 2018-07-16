@@ -22,7 +22,7 @@ module Exportable
         def export(options)
           CSV.generate do |csv|
             csv << options[:fields].map(&:to_s) if options[:header]
-            @model.where(nil).find_each do |record|
+            @model.where(nil).each do |record|
               csv << options[:fields].map { |attr| record.send(attr).to_s }
             end
           end

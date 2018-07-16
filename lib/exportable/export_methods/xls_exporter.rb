@@ -26,7 +26,7 @@ module Exportable
             sheet.row(i).concat(options[:fields].map(&:to_s))
             i += 1
           end
-          @model.where(nil).find_each do |record|
+          @model.where(nil).each do |record|
             sheet.row(i).concat options[:fields].map { |attr| record.send(attr).to_s }
             i += 1
           end
