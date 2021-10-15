@@ -90,12 +90,17 @@ Note: *If your model method contains query to association please be carefull to 
 Article.includes(:user).export methods: [:user_name]   
 ```
 ## Testing
- This plugin uses Rspec for testing. Go to gem folder and run:
+ This plugin uses [Rspec](https://rspec.info/) for testing. Go to gem folder and run:
  
+ You would need to setup the [sqlite](https://www.sqlite.org/) database using the following commands:
+ ```bash
+ bundle install
+ RAILS_ENV=test bundle exec rake db:setup
+ ```
+ And finally run the test suite with:
  ```bash
  $ rspec
  ```
- 
 
 ## Contributing
 More output formats are always welcome. 
